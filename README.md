@@ -135,12 +135,12 @@ Prompt tambahan yang diterapkan lintas komponen selama proses pengembangan:
 UAS_AI_2411501642/
 ├── index.html      → Struktur semua section (Header, Hero, Roadmap, UTBK Tools, Tentang, Universitas, Galeri, Kontak, Footer)
 ├── style.css       → Design system (CSS variables), glassmorphism, dark/light theme, responsive layout
-├── main.js         → Theme, Slider, Header scroll, Mobile Drawer, Scroll Reveal, Smooth Scroll, Countdown, Pomodoro, Kalkulator, Contact Form, Roadmap Filter, Gallery Lightbox
+├── main.js         → Theme, Slider, Header scroll, Mobile Drawer, Scroll Reveal, Smooth Scroll, Countdown, Pomodoro, Kalkulator, Contact Form, Roadmap Filter, Gallery dan Slider
 └── img/            → Aset gambar (logo, slider)
 ```
 
 ---
 
-### ⚠️ Catatan Etika Penggunaan AI
+### Catatan Etika Penggunaan AI
 
-Website ini dikembangkan dengan bantuan AI sebagai *coding assistant/pair programmer* — AI membantu menerjemahkan instruksi/prompt di atas menjadi kode HTML/CSS/JS. Proses pengambilan keputusan desain (skema warna, struktur informasi, fitur apa yang dibutuhkan siswa SMA), penyesuaian konten (data universitas, tanggal roadmap, nomor kontak), serta pengujian dan iterasi tetap dilakukan oleh saya sebagai pengembang.
+Website ini tidak sepenuh nya menggunakan AI karena untuk memberikan gambar logo universitas dan lain nya yang mengandung kode seperti "href" harus diganti dan juga css dark mode yang masih terang ataupun tidak mobile friendly. Dikembangkan dengan bantuan AI sebagai *coding assistant/pair programmer* — AI membantu menerjemahkan instruksi/prompt di atas menjadi kode HTML/CSS/JS. Proses pengambilan keputusan desain (skema warna, struktur informasi, fitur apa yang dibutuhkan siswa SMA), penyesuaian konten (data universitas, tanggal roadmap, nomor kontak), serta pengujian dan iterasi tetap dilakukan oleh saya sebagai pengembang.
