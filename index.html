@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Goes To School — SMAN 6 Depok</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Terapkan tema sebelum CSS render agar tidak ada "flash" warna salah
+    (function () {
+      try {
+        var saved = localStorage.getItem('hexa-theme');
+        var theme = saved || 'light';
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+
+      <!-- Logo -->
+      <a href="#" class="header__logo">
+        <img src="img/logo-sman6depok.png" alt="Logo SMA Negeri 6 Depok" class="header__logo-img" />
+      </a>
+
+      <!-- Nav Desktop -->
+      <nav class="header__nav" id="desktopNav">
+        <a href="#beranda" class="header__nav-link">Beranda</a>
+        <a href="#tentang" class="header__nav-link">Tentang</a>
+        <a href="#roadmap" class="header__nav-link">Roadmap</a>
+        <a href="#universitas" class="header__nav-link">Universitas</a>
+        <a href="#kontak" class="header__nav-link">Kontak</a>
+      </nav>
+
+      <!-- CTA + Hamburger -->
+      <div class="header__actions">
+        <a href="#universitas" class="btn btn--primary btn--sm header__cta">Eksplor Kampus</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema gelap/terang">
+          <svg class="theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Mobile Drawer (di luar header agar position:fixed tidak terpengaruh backdrop-filter header) -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer__inner">
+      <nav class="mobile-drawer__nav">
+        <a href="#beranda" class="mobile-drawer__link" data-close-drawer>Beranda</a>
+        <a href="#tentang" class="mobile-drawer__link" data-close-drawer>Tentang</a>
+        <a href="#roadmap" class="mobile-drawer__link" data-close-drawer>Roadmap</a>
+        <a href="#universitas" class="mobile-drawer__link" data-close-drawer>Universitas</a>
+        <a href="#kontak" class="mobile-drawer__link" data-close-drawer>Kontak</a>
+      </nav>
+      <button class="mobile-drawer__theme" id="themeToggleMobile">
+        <span class="mobile-drawer__theme-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Mode Tampilan
+        </span>
+        <span id="themeToggleMobileState">Terang</span>
+      </button>
+      <a href="#universitas" class="btn btn--primary mobile-drawer__cta" data-close-drawer>Eksplor Kampus</a>
+    </div>
+  </div>
+  <div class="mobile-drawer__backdrop" id="drawerBackdrop"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════ HERO / SLIDER ═══ -->
+    <section class="hero" id="beranda">
+      <div class="slider" id="slider">
+
+        <!-- Slide 1 -->
+        <div class="slide slide--active" style="background-image: url('img/slider-10.webp');">
+          <div class="slide__overlay"></div>
+          <div class="slide__content container">
+            <h1 class="slide__title">HEXA <br /><span class="text-accent">SMAN 6 Depok</span></h1>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('img/slider-5.webp');">
+          <div class="slide__overlay"></div>
+          <div class="slide__content container">
+            <span class="slide__eyebrow">Konsultasi Alumni</span>
+            <h1 class="slide__title">Tanya Langsung <br /><span class="text-accent">Kakak Alumni</span></h1>
+            <p class="slide__desc">Dapatkan insight nyata dari alumni SMAN 6 yang sudah berhasil masuk PTN favorit.</p>
+            <a href="#universitas" class="btn btn--primary">Hubungi Alumni</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('img/slider33.webp');">
+          <div class="slide__overlay"></div>
+          <div class="slide__content container">
+            <span class="slide__eyebrow">Persiapan SPMB</span>
+            <h1 class="slide__title">Persiapkan <br /><span class="text-accent">Masa Depanmu</span></h1>
+            <p class="slide__desc">Kenali jalur masuk, jurusan, dan strategi tembus PTN impian mulai dari sekarang.</p>
+            <a href="#universitas" class="btn btn--primary">Mulai Eksplorasi</a>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider__arrow slider__arrow--prev" id="sliderPrev" aria-label="Slide sebelumnya">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="slider__arrow slider__arrow--next" id="sliderNext" aria-label="Slide berikutnya">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="slider__dots" id="sliderDots">
+          <button class="slider__dot slider__dot--active" data-index="0" aria-label="Slide 1"></button>
+          <button class="slider__dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="slider__dot" data-index="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+
+      <!-- Image size guide (visible only without real images) -->
+      <div class="slider__placeholder-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="slider__placeholder-icon"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><line x1="12" y1="11" x2="12" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1" fill="currentColor"/></svg>
+        Upload gambar slider berukuran <strong>1920 × 800 px</strong> (.jpg/.webp) sebagai <code>slide-1.jpg</code>, <code>slide-2.jpg</code>, <code>slide-3.jpg</code> ke folder <code>assets/</code>
+      </div>
+    </section>
+
+    <section class="hero-cta section" id="hero-cta">
+      <div class="container">
+        <div class="hero-cta__inner">
+          <span class="section-eyebrow">Campus Goes To School</span>
+          <h1 class="hero-cta__title">Raih Kampus <span class="text-accent">Impianmu</span></h1>
+          <p class="hero-cta__desc">Program pendampingan siswa SMAN 6 Depok menuju perguruan tinggi terbaik Indonesia.</p>
+          <div class="hero-cta__actions">
+            <a href="#universitas" class="btn btn--primary">Lihat 12 Universitas Top</a>
+            <a href="#roadmap" class="btn btn--outline">Lihat Roadmap UTBK</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ ROADMAP ═══ -->
+    <section class="roadmap section" id="roadmap">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Jalur Seleksi PTN</span>
+          <h2 class="section-title">Timeline <span class="text-accent">Roadmap Seleksi</span></h2>
+          <p class="section-subtitle">Tanggal-tanggal penting yang wajib kamu catat untuk SNBP, SNBT, dan Jalur Mandiri.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="roadmap__filters">
+          <button class="roadmap__filter-btn roadmap__filter-btn--active" data-filter="all">Semua</button>
+          <button class="roadmap__filter-btn" data-filter="snbp">SNBP</button>
+          <button class="roadmap__filter-btn" data-filter="snbt">SNBT</button>
+          <button class="roadmap__filter-btn" data-filter="mandiri">Mandiri</button>
+        </div>
+
+        <div class="roadmap__list">
+
+          <!-- Step 1 -->
+          <div class="roadmap__row" data-jalur="snbp">
+            <div class="roadmap__step-num">
+              <span>01</span>
+            </div>
+            <div class="roadmap__connector">
+              <div class="roadmap__connector-line"></div>
+            </div>
+            <div class="roadmap__card glass-card roadmap__card--snbp">
+              <div class="roadmap__card-left">
+                <span class="roadmap__badge roadmap__badge--snbp">SNBP</span>
+                <h4 class="roadmap__title">Pengumuman Siswa Eligible</h4>
+                <p class="roadmap__desc">Sekolah mengumumkan daftar siswa yang memenuhi syarat untuk mendaftar SNBP berdasarkan nilai rapor.</p>
+              </div>
+              <div class="roadmap__card-right">
+                <div class="roadmap__date-chip">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                  Desember 2025
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="roadmap__row" data-jalur="snbp">
+            <div class="roadmap__step-num">
+              <span>02</span>
+            </div>
+            <div class="roadmap__connector">
+              <div class="roadmap__connector-line"></div>
+            </div>
+            <div class="roadmap__card glass-card roadmap__card--snbp">
+              <div class="roadmap__card-left">
+                <span class="roadmap__badge roadmap__badge--snbp">SNBP</span>
+                <h4 class="roadmap__title">Pendaftaran SNBP</h4>
+                <p class="roadmap__desc">Siswa eligible mendaftar secara online di portal SNPMB. Pilih 2 prodi dengan bijak sesuai nilai dan minat.</p>
+              </div>
+              <div class="roadmap__card-right">
+                <div class="roadmap__date-chip">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                  Jan – Feb 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="roadmap__row" data-jalur="snbp">
+            <div class="roadmap__step-num">
+              <span>03</span>
+            </div>
+            <div class="roadmap__connector">
+              <div class="roadmap__connector-line"></div>
+            </div>
+            <div class="roadmap__card glass-card roadmap__card--snbp">
+              <div class="roadmap__card-left">
+                <span class="roadmap__badge roadmap__badge--snbp">SNBP</span>
+                <h4 class="roadmap__title">Pengumuman Hasil SNBP</h4>
+                <p class="roadmap__desc">Hasil SNBP diumumkan. Yang lolos langsung daftar ulang. Yang belum lolos, bersiap untuk SNBT.</p>
+              </div>
+              <div class="roadmap__card-right">
+                <div class="roadmap__date-chip">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                  Maret 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="roadmap__row" data-jalur="snbt">
+            <div class="roadmap__step-num roadmap__step-num--snbt">
+              <span>04</span>
+            </div>
+            <div class="roadmap__connector">
+              <div class="roadmap__connector-line"></div>
+            </div>
+            <div class="roadmap__card glass-card roadmap__card--snbt">
+              <div class="roadmap__card-left">
+                <span class="roadmap__badge roadmap__badge--snbt">SNBT</span>
+                <h4 class="roadmap__title">Pendaftaran UTBK-SNBT</h4>
+                <p class="roadmap__desc">Daftarkan diri di portal SNPMB, pilih sesi ujian, dan cetak kartu peserta. Bayar biaya pendaftaran tepat waktu.</p>
+              </div>
+              <div class="roadmap__card-right">
+                <div class="roadmap__date-chip roadmap__date-chip--snbt">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                  Mei – Jun 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="roadmap__row" data-jalur="snbt">
+            <div class="roadmap__step-num roadmap__step-num--snbt">
+              <span>05</span>
+            </div>
+            <div class="roadmap__connector">
+              <div class="roadmap__connector-line"></div>
+            </div>
+            <div class="roadmap__card glass-card roadmap__card--snbt">
+              <div class="roadmap__card-left">
+                <span class="roadmap__badge roadmap__badge--snbt">SNBT</span>
+                <h4 class="roadmap__title">Pelaksanaan UTBK</h4>
+                <p class="roadmap__desc">Tes dimulai 12 Juli 2026 di pusat UTBK. Materi meliputi TPS dan Literasi Bahasa. Datang tepat waktu dengan kartu peserta.</p>
+              </div>
+              <div class="roadmap__card-right">
+                <div class="roadmap__date-chip roadmap__date-chip--snbt">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                  12 – 26 Jul 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="roadmap__row" data-jalur="snbt">
+            <div class="roadmap__step-num roadmap__step-num--snbt">
+              <span>06</span>
+            </div>
+            <div class="roadmap__connector">
+              <div class="roadmap__connector-line"></div>
+            </div>
+            <div class="roadmap__card glass-card roadmap__card--snbt">
+              <div class="roadmap__card-left">
+                <span class="roadmap__badge roadmap__badge--snbt">SNBT</span>
+                <h4 class="roadmap__title">Pengumuman Hasil SNBT</h4>
+                <p class="roadmap__desc">Hasil SNBT diumumkan secara online. Segera siapkan dokumen daftar ulang jika dinyatakan lulus.</p>
+              </div>
+              <div class="roadmap__card-right">
+                <div class="roadmap__date-chip roadmap__date-chip--snbt">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                  Agustus 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="roadmap__row roadmap__row--last" data-jalur="mandiri">
+            <div class="roadmap__step-num roadmap__step-num--mandiri">
+              <span>07</span>
+            </div>
+            <div class="roadmap__connector"></div>
+            <div class="roadmap__card glass-card roadmap__card--mandiri">
+              <div class="roadmap__card-left">
+                <span class="roadmap__badge roadmap__badge--mandiri">Mandiri</span>
+                <h4 class="roadmap__title">Jalur Mandiri PTN</h4>
+                <p class="roadmap__desc">Setiap PTN membuka jalur mandiri dengan mekanisme masing-masing. Cek website resmi PTN tujuanmu untuk info lengkap.</p>
+              </div>
+              <div class="roadmap__card-right">
+                <div class="roadmap__date-chip roadmap__date-chip--mandiri">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                  Ags – Sep 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /roadmap__list -->
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════ UTBK TOOLS ═══ -->
+    <section class="utbk-tools section" id="utbk-tools">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-eyebrow">Tools Belajar</span>
+          <h2 class="section-title">Persiapan <span class="text-accent">UTBK</span></h2>
+          <p class="section-subtitle">Tools interaktif untuk menemanimu belajar dan menghitung peluang masuk PTN impian.</p>
+        </div>
+
+        <!-- ── COUNTDOWN (terpusat) ── -->
+        <div class="countdown-card glass-card">
+          <div class="countdown-card__badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Menuju UTBK 2026
+          </div>
+          <h3 class="countdown-card__title">Berapa lama lagi<br/><span class="text-accent">UTBK dimulai?</span></h3>
+          <div class="countdown__blocks">
+            <div class="countdown__block">
+              <span class="countdown__num" id="cdDays">--</span>
+              <span class="countdown__unit">Hari</span>
+            </div>
+            <div class="countdown__sep">:</div>
+            <div class="countdown__block">
+              <span class="countdown__num" id="cdHours">--</span>
+              <span class="countdown__unit">Jam</span>
+            </div>
+            <div class="countdown__sep">:</div>
+            <div class="countdown__block">
+              <span class="countdown__num" id="cdMins">--</span>
+              <span class="countdown__unit">Menit</span>
+            </div>
+            <div class="countdown__sep">:</div>
+            <div class="countdown__block">
+              <span class="countdown__num" id="cdSecs">--</span>
+              <span class="countdown__unit">Detik</span>
+            </div>
+          </div>
+          <p class="countdown-card__note">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            UTBK 2026 dijadwalkan mulai 12 Juli 2026 — pastikan kamu sudah siap!
+          </p>
+        </div>
+
+        <!-- ── KALKULATOR (di bawah countdown) ── -->
+        <div class="calc-card glass-card">
+          <div class="calc-card__header">
+            <div class="calc-card__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="8" y1="7" x2="16" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="11" x2="16" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="15" x2="12" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3 class="calc-card__title">Kalkulator Target UTBK</h3>
+              <p class="calc-card__subtitle">Cek seberapa dekat kamu dengan PTN impian</p>
+            </div>
+          </div>
+
+          <div class="calc-card__body">
+            <!-- Form -->
+            <div class="calc__form">
+              <div class="calc__field">
+                <label class="calc__label">PTN Impian</label>
+                <div class="calc__select-wrap">
+                  <svg class="calc__select-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <select class="calc__select" id="calcPTN">
+                    <option value="">-- Pilih PTN --</option>
+                    <option value="750">Universitas Indonesia (UI) — Target ~750</option>
+                    <option value="740">Universitas Gadjah Mada (UGM) — Target ~740</option>
+                    <option value="745">Institut Teknologi Bandung (ITB) — Target ~745</option>
+                    <option value="720">Universitas Airlangga (UNAIR) — Target ~720</option>
+                    <option value="710">IPB University — Target ~710</option>
+                    <option value="700">Universitas Padjadjaran (UNPAD) — Target ~700</option>
+                    <option value="690">Universitas Diponegoro (UNDIP) — Target ~690</option>
+                    <option value="730">Institut Teknologi Sepuluh Nopember (ITS) — Target ~730</option>
+                    <option value="685">Universitas Brawijaya (UB) — Target ~685</option>
+                    <option value="680">Universitas Sebelas Maret (UNS) — Target ~680</option>
+                    <option value="675">Universitas Hasanuddin (UNHAS) — Target ~675</option>
+                    <option value="670">Universitas Sumatera Utara (USU) — Target ~670</option>
+                  </select>
+                  <svg class="calc__select-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+
+              <div class="calc__scores">
+                <div class="calc__field">
+                  <label class="calc__label">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Skor TPS Tryout
+                  </label>
+                  <input type="number" class="calc__input" id="calcTPS" min="0" max="1000" placeholder="cth. 620" />
+                </div>
+                <div class="calc__field">
+                  <label class="calc__label">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Skor Literasi Tryout
+                  </label>
+                  <input type="number" class="calc__input" id="calcLit" min="0" max="1000" placeholder="cth. 650" />
+                </div>
+              </div>
+
+              <button class="btn btn--primary calc__btn" id="calcBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Hitung Peluangku
+              </button>
+            </div>
+
+            <!-- Result -->
+            <div class="calc__result" id="calcResult" style="display:none">
+              <div class="calc__result-header">
+                <span class="calc__result-label" id="calcLabel">—</span>
+                <span class="calc__result-gap" id="calcGap">—</span>
+              </div>
+              <div class="calc__progress-wrap">
+                <div class="calc__progress-bar">
+                  <div class="calc__progress-fill" id="calcFill" style="width:0%"></div>
+                </div>
+                <span class="calc__progress-pct" id="calcPct">0%</span>
+              </div>
+              <p class="calc__result-msg" id="calcMsg">—</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ TENTANG ═══ -->
+    <section class="about section" id="tentang">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__text">
+            <span class="section-eyebrow">Tentang Program</span>
+            <h2 class="section-title">Campus Goes<br /><span class="text-accent">To School</span></h2>
+            <p class="about__desc">Program <em>Campus Goes to School</em> hadir untuk menjembatani siswa SMAN 6 Depok dengan dunia perguruan tinggi. Kami menghadirkan kakak alumni dari 10 universitas terbaik Indonesia siap membimbing kamu secara langsung.</p>
+            <ul class="about__list">
+              <li class="about__list-item">
+                <span class="about__list-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.0857V12.0057C21.9988 14.1621 21.3005 16.2604 20.0093 17.9875C18.7182 19.7147 16.9033 20.9782 14.8354 21.5896C12.7674 22.201 10.5573 22.1276 8.53447 21.3803C6.51168 20.633 4.78465 19.2518 3.61096 17.4428C2.43727 15.6338 1.87979 13.4938 2.02168 11.342C2.16356 9.19029 2.99721 7.14205 4.39828 5.5028C5.79935 3.86354 7.69279 2.72111 9.79619 2.24587C11.8996 1.77063 14.1003 1.98806 16.07 2.86572" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Konsultasi langsung dengan alumni berpengalaman
+              </li>
+              <li class="about__list-item">
+                <span class="about__list-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.0857V12.0057C21.9988 14.1621 21.3005 16.2604 20.0093 17.9875C18.7182 19.7147 16.9033 20.9782 14.8354 21.5896C12.7674 22.201 10.5573 22.1276 8.53447 21.3803C6.51168 20.633 4.78465 19.2518 3.61096 17.4428C2.43727 15.6338 1.87979 13.4938 2.02168 11.342C2.16356 9.19029 2.99721 7.14205 4.39828 5.5028C5.79935 3.86354 7.69279 2.72111 9.79619 2.24587C11.8996 1.77063 14.1003 1.98806 16.07 2.86572" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Info jalur masuk SNBP, SNBT, dan Mandiri
+              </li>
+              <li class="about__list-item">
+                <span class="about__list-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.0857V12.0057C21.9988 14.1621 21.3005 16.2604 20.0093 17.9875C18.7182 19.7147 16.9033 20.9782 14.8354 21.5896C12.7674 22.201 10.5573 22.1276 8.53447 21.3803C6.51168 20.633 4.78465 19.2518 3.61096 17.4428C2.43727 15.6338 1.87979 13.4938 2.02168 11.342C2.16356 9.19029 2.99721 7.14205 4.39828 5.5028C5.79935 3.86354 7.69279 2.72111 9.79619 2.24587C11.8996 1.77063 14.1003 1.98806 16.07 2.86572" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Profil lengkap 10 universitas terbaik Indonesia
+              </li>
+            </ul>
+          </div>
+          <div class="about__stats">
+            <div class="stat-card glass-card">
+              <span class="stat-card__number text-accent">13</span>
+              <span class="stat-card__label">Universitas Terbaik</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-card__number text-accent">100+</span>
+              <span class="stat-card__label">Alumni Siap Konsul</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-card__number text-accent">2025</span>
+              <span class="stat-card__label">Angkatan Aktif</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-card__number text-accent">A</span>
+              <span class="stat-card__label">Akreditasi Sekolah</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- ═══════════════════════════════════════════ UNIVERSITAS ═══ -->
+    <section class="universities section" id="universitas">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Destinasi Terbaik</span>
+          <h2 class="section-title">Top 12 Universitas<br /><span class="text-accent">Indonesia</span></h2>
+          <p class="section-subtitle">Konsultasikan pilihanmu langsung dengan kakak alumni dari masing-masing kampus.</p>
+        </div>
+
+        <div class="uni-grid">
+
+          <!-- 1. UI -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">01</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://apps.acts.ui.ac.id/images/Logo%20Univ/UI.png" alt="Logo UI" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UI</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Indonesia</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Depok, Jawa Barat
+              </div>
+              <p class="uni-card__desc">Reputasi akademik yang sangat kuat di bidang kedokteran, hukum, dan ilmu sosial.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Indonesia" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 2. UGM -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">02</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/id/thumb/9/9f/Emblem_of_Universitas_Gadjah_Mada.svg/1280px-Emblem_of_Universitas_Gadjah_Mada.svg.png" alt="Logo UGM" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UGM</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Gadjah Mada</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Sleman, Yogyakarta
+              </div>
+              <p class="uni-card__desc">Universitas riset terbaik nasional dengan pengaruh sosial dan budaya yang kuat.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Gadjah%20Mada" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 3. ITB -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">03</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/id/thumb/9/95/Logo_Institut_Teknologi_Bandung.png/250px-Logo_Institut_Teknologi_Bandung.png" alt="Logo ITB" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">ITB</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Institut Teknologi Bandung</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Bandung, Jawa Barat
+              </div>
+              <p class="uni-card__desc">Institusi teknik dan sains nomor satu di Indonesia yang banyak melahirkan inovator.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Institut%20Teknologi%20Bandung" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 4. UNAIR -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">04</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://arsip.unair.ac.id/wp-content/uploads/2019/01/logo-unair.png" alt="Logo UNAIR" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UNAIR</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Airlangga</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Surabaya, Jawa Timur
+              </div>
+              <p class="uni-card__desc">Sangat unggul dalam bidang ilmu kesehatan, kedokteran, dan farmasi.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Airlangga" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 5. IPB -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">05</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/id/0/0f/Logo_IPB.png" alt="Logo IPB" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">IPB</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">IPB University</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Bogor, Jawa Barat
+              </div>
+              <p class="uni-card__desc">Pusat pendidikan dan riset terbaik di bidang pertanian, kelautan, dan biosains tropis.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20IPB%20University" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 6. UNPAD -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">06</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://www.unpad.ac.id/wp-content/uploads/2018/04/logo-unpad1.png" alt="Logo UNPAD" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UNPAD</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Padjadjaran</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Sumedang, Jawa Barat
+              </div>
+              <p class="uni-card__desc">Terkenal dengan Fakultas Kedokteran serta Ilmu Komunikasi yang menjadi favorit nasional.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Padjadjaran" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 7. UNDIP -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">07</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/id/9/9b/UNDIPOfficial.png" alt="Logo UNDIP" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UNDIP</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Diponegoro</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Semarang, Jawa Tengah
+              </div>
+              <p class="uni-card__desc">Lulusannya memiliki tingkat serapan dan daya saing yang sangat tinggi di dunia kerja.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Diponegoro" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 8. ITS -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">08</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisVAIibw6C5RtyHomdNTaA4twHZbP0-M8wW36gQdxj71rFOvkbzc-Ck9scTkuK6KXtrMuvHapNAkGCOqHlJ4BvjZJE3c3aeuMw3cWrOw7AVN17aFJl6f73TYGU6GhFd4RtKafADRYWnQw/s1600/Lambang+ITS.png" alt="Logo ITS" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">ITS</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Institut Teknologi Sepuluh Nopember</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Surabaya, Jawa Timur
+              </div>
+              <p class="uni-card__desc">Unggul dalam bidang teknologi maritim, rekayasa teknik, dan desain.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Institut%20Teknologi%20Sepuluh%20Nopember" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 9. UB -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">09</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Logo_Universitas_Brawijaya.svg/1280px-Logo_Universitas_Brawijaya.svg.png" alt="Logo UB" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UB</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Brawijaya</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Malang, Jawa Timur
+              </div>
+              <p class="uni-card__desc">Memiliki program studi di bidang ekonomi dan ilmu komputer yang sangat diminati.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Brawijaya" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 10. UNS -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">10</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://uns.ac.id/id/wp-content/uploads/2023/06/logo-uns-biru.png" alt="Logo UNS" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UNS</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Sebelas Maret</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Surakarta, Jawa Tengah
+              </div>
+              <p class="uni-card__desc">Mengalami pertumbuhan pesat dalam kualitas riset dan pengabdian masyarakat.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Sebelas%20Maret" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 11. UNHAS -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">11</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo-Resmi-Unhas-1.png" alt="Logo UNHAS" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">UNHAS</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Hasanuddin</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Makassar, Sulawesi Selatan
+              </div>
+              <p class="uni-card__desc">PTN terbaik dan pusat pendidikan utama di Indonesia Timur, unggul di bidang kedokteran, hukum, dan ilmu kelautan.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Hasanuddin" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+          <!-- 12. USU -->
+          <div class="uni-card glass-card">
+            <div class="uni-card__rank">12</div>
+            <div class="uni-card__logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Logo_Universitas_Sumatera_Utara.svg/960px-Logo_Universitas_Sumatera_Utara.svg.png?_=20240919032318" alt="Logo USU" class="uni-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="uni-card__logo-fallback" style="display:none">USU</div>
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name">Universitas Sumatera Utara</h3>
+              <div class="uni-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Medan, Sumatera Utara
+              </div>
+              <p class="uni-card__desc">PTN pionir di Pulau Sumatra dengan reputasi riset sangat baik di bidang kedokteran tropis, farmasi, dan pertanian.</p>
+            </div>
+            <a href="https://wa.me/6281025930186?text=Halo%20kak%2C%20saya%20siswa%20SMAN%206%20Depok%20ingin%20konsultasi%20seputar%20Universitas%20Sumatera%20Utara" class="btn btn--outline uni-card__cta" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.65L5.27 16.6L5.08 16.29C4.24 14.98 3.8 13.46 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.91C20.28 16.45 16.57 20.15 12.04 20.15ZM17.34 14.02C17.1 13.9 15.9 13.31 15.68 13.23C15.46 13.15 15.3 13.11 15.14 13.35C14.98 13.59 14.51 14.14 14.37 14.3C14.23 14.46 14.09 14.48 13.85 14.36C13.61 14.24 12.82 13.98 11.89 13.15C11.16 12.5 10.67 11.7 10.53 11.46C10.39 11.22 10.51 11.09 10.63 10.97C10.74 10.86 10.87 10.68 10.99 10.54C11.11 10.4 11.15 10.3 11.23 10.14C11.31 9.98 11.27 9.84 11.21 9.72C11.15 9.6 10.67 8.39 10.47 7.91C10.27 7.43 10.07 7.5 9.92 7.49C9.78 7.49 9.62 7.49 9.46 7.49C9.3 7.49 9.04 7.55 8.82 7.79C8.6 8.03 7.99 8.6 7.99 9.81C7.99 11.02 8.84 12.19 8.96 12.35C9.08 12.51 10.66 14.95 13.08 16.02C13.66 16.27 14.11 16.42 14.46 16.53C15.04 16.72 15.57 16.69 15.99 16.63C16.46 16.56 17.43 16.04 17.63 15.47C17.83 14.9 17.83 14.42 17.77 14.32C17.71 14.22 17.55 14.16 17.34 14.02Z"/></svg>
+              Konsul Alumni
+            </a>
+          </div>
+
+        </div><!-- /uni-grid -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ GALLERY ═══ -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Dokumentasi</span>
+          <h2 class="section-title">Galeri <span class="text-accent">SMAN 6 DEPOK</span></h2>
+          <p class="section-subtitle">Lihat perjalanan Alumni SMAN 6 Depok.</p>
+        </div>
+
+        <div class="gallery__grid">
+          <div class="gallery__item gallery__item--large">
+            <div class="gallery__img-wrap" data-lightbox data-src="img/sliderr.webp" data-caption="Alumni Siswa SMAN 6 Depok">
+              <img src="img/sliderr.webp" alt="Dokumentasi Campus Goes To School 1" class="gallery__img" onerror="this.parentElement.classList.add('gallery__img-wrap--empty')" />
+              <div class="gallery__overlay">
+                <span class="gallery__caption">Alumni Siswa SMAN 6 Depok</span>
+                <span class="gallery__zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="8" x2="11" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__img-wrap" data-lightbox data-src="img/slider-3.webp" data-caption="HEXA Kingdom - Basket Sekolah">
+              <img src="img/slider-3.webp" alt="Dokumentasi Campus Goes To School 2" class="gallery__img" onerror="this.parentElement.classList.add('gallery__img-wrap--empty')" />
+              <div class="gallery__overlay">
+                <span class="gallery__caption">HEXA Kingdom - Basket Sekolah</span>
+                <span class="gallery__zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="8" x2="11" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__img-wrap" data-lightbox data-src="img/slider-4.webp" data-caption="CGTS 2024">
+              <img src="img/slider-4.webp" alt="Dokumentasi Campus Goes To School 3" class="gallery__img" onerror="this.parentElement.classList.add('gallery__img-wrap--empty')" />
+              <div class="gallery__overlay">
+                <span class="gallery__caption">CGTS 2024</span>
+                <span class="gallery__zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="8" x2="11" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__img-wrap" data-lightbox data-src="img/slider-6.webp" data-caption="Kegiatan SMAN 6 Depok">
+              <img src="img/slider-6.webp" alt="Dokumentasi Campus Goes To School 4" class="gallery__img" onerror="this.parentElement.classList.add('gallery__img-wrap--empty')" />
+              <div class="gallery__overlay">
+                <span class="gallery__caption">Kegiatan SMAN 6 Depok</span>
+                <span class="gallery__zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="8" x2="11" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="gallery__img-wrap" data-lightbox data-src="img/slider-1.webp" data-caption="Study Tour - Universitas Brawijaya">
+              <img src="img/slider-1.webp" alt="Dokumentasi Campus Goes To School 5" class="gallery__img" onerror="this.parentElement.classList.add('gallery__img-wrap--empty')" />
+              <div class="gallery__overlay">
+                <span class="gallery__caption">Study Tour - Universitas Brawijaya</span>
+                <span class="gallery__zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="8" x2="11" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ LIGHTBOX ══ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Tampilan foto penuh">
+      <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+      <div class="lightbox__container">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Tutup foto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Foto sebelumnya">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="lightbox__img-wrap">
+          <div class="lightbox__loader" id="lightboxLoader"><div class="lightbox__spinner"></div></div>
+          <img src="" alt="" class="lightbox__img" id="lightboxImg" />
+        </div>
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Foto berikutnya">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="lightbox__footer">
+          <span class="lightbox__caption" id="lightboxCaption"></span>
+          <span class="lightbox__counter" id="lightboxCounter"></span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════ KONTAK ═══ -->
+  <section class="contact section" id="kontak">
+    <div class="container">
+      <div class="contact__inner">
+
+        <!-- Left: Info -->
+        <div class="contact__info">
+          <span class="section-eyebrow">Hubungi Kami</span>
+          <h2 class="contact__title">Ada Pertanyaan?<br /><span class="text-accent">Kami Siap Membantu</span></h2>
+          <p class="contact__desc">Konsultasikan pilihan kampus dan jalur seleksimu langsung dengan Guru BK SMAN 6 Depok. Pesan kamu akan langsung diterima via WhatsApp.</p>
+
+          <ul class="contact__detail-list">
+            <li class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <div>
+                <p class="contact__detail-label">Alamat</p>
+                <p class="contact__detail-value">Jl. Raya Limo No.30, Limo, Kec. Limo, Kota Depok</p>
+              </div>
+            </li>
+            <li class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <p class="contact__detail-label">WhatsApp Guru BK</p>
+                <p class="contact__detail-value">+62 821-1234-5678</p>
+              </div>
+            </li>
+            <li class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <p class="contact__detail-label">Email</p>
+                <p class="contact__detail-value">hexaofficial@sman6depok.sch.id</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact__form-wrap glass-card">
+          <h3 class="contact__form-title">Kirim Pesan ke Guru BK</h3>
+
+          <div class="contact__form">
+            <div class="contact__field">
+              <label class="contact__label" for="contactName">Nama Lengkap</label>
+              <div class="contact__input-wrap">
+                <svg class="contact__input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <input type="text" id="contactName" class="contact__input" placeholder="cth. Ezra Rahmaditya" maxlength="80" />
+              </div>
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="contactClass">Kelas</label>
+              <div class="contact__input-wrap">
+                <svg class="contact__input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <select id="contactClass" class="contact__input contact__select">
+                  <option value="">-- Pilih Kelas --</option>
+                  <option value="X">Kelas X</option>
+                  <option value="XI">Kelas XI</option>
+                  <option value="XII">Kelas XII</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="contactMsg">Pesan / Pertanyaan</label>
+              <div class="contact__input-wrap contact__input-wrap--textarea">
+                <svg class="contact__input-icon contact__input-icon--top" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <textarea id="contactMsg" class="contact__input contact__textarea" placeholder="Tuliskan pertanyaanmu tentang kampus, jalur seleksi, atau konsultasi karir..." rows="4" maxlength="500"></textarea>
+              </div>
+              <span class="contact__char-count"><span id="charCount">0</span>/500</span>
+            </div>
+
+            <button class="btn btn--primary contact__btn" id="contactSendBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Kirim via WhatsApp
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="img/logo.png" alt="Logo SMAN 6 Depok" class="footer__logo" />
+          <p class="footer__tagline">Campus Goes To School — Menjembatani Siswa Menuju PTN Terbaik Indonesia.</p>
+        </div>
+        <div class="footer__contact">
+          <h4 class="footer__heading">Kontak Sekolah</h4>
+          <ul class="footer__list">
+            <li class="footer__list-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              Jl. Raya Limo No.30, Limo, Kec. Limo, Kota Depok
+            </li>
+            <li class="footer__list-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92V19.92C22.0011 20.4853 21.7603 21.0255 21.3336 21.4074C20.9069 21.7893 20.3333 21.9793 19.77 21.93C16.5672 21.5857 13.4858 20.5342 10.77 18.85C8.24625 17.3147 6.11562 15.1841 4.58 12.66C2.89 9.93193 1.83834 6.83303 1.5 3.61C1.45052 3.04837 1.63936 2.4769 2.01894 2.05064C2.39852 1.62438 2.93613 1.43374 3.5 1.43H6.5C7.52544 1.41891 8.40661 2.14631 8.57 3.16C8.73159 4.16825 9.00356 5.15634 9.38 6.1C9.67149 6.83585 9.49572 7.67324 8.94 8.23L7.69 9.48C9.13436 12.0852 11.2548 14.2056 13.86 15.65L15.11 14.4C15.6668 13.8443 16.5042 13.6685 17.24 13.96C18.1837 14.3364 19.1718 14.6084 20.18 14.77C21.2073 14.9347 21.9424 15.8342 21.92 16.87L22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              02112345678
+            </li>
+            <li class="footer__list-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              hexaofficial@sman6depok.sch.id
+            </li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading">Navigasi</h4>
+          <ul class="footer__list">
+            <li><a href="#beranda" class="footer__link">Beranda</a></li>
+            <li><a href="#tentang" class="footer__link">Tentang Program</a></li>
+            <li><a href="#roadmap" class="footer__link">Roadmap Seleksi</a></li>
+            <li><a href="#universitas" class="footer__link">Top 12 Universitas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 SMA Negeri 6 Depok · Campus Goes To School</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
