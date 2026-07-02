@@ -1,4 +1,4 @@
-# Dokumentasi Prompt AI — Campus Goes To School (SMAN 6 Depok)
+# Dokumentasi Prompt dengan Claude AI — Campus Goes To School (SMAN 6 Depok)
 
 Dokumen ini berisi rekonstruksi prompt yang digunakan untuk membangun website **"Campus Goes To School"** — sebuah landing page informasi kampus untuk siswa SMA Negeri 6 Depok, dibuat dengan HTML, CSS, dan JavaScript murni (tanpa framework).
 
